@@ -1,1 +1,1 @@
-# ghostvault
+# GhostVault
