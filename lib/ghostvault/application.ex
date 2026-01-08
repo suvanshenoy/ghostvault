@@ -23,6 +23,7 @@ defmodule GhostVault.Application do
         [
           app: :ghostvault,
           id: GhostVaultWindow,
+          title: "GhostVault",
           url: &GhostVaultWeb.Endpoint.url/0
         ]
       }

@@ -25,7 +25,7 @@ defmodule GhostVaultWeb.Endpoint do
     at: "/",
     from: :ghostvault,
     gzip: not code_reloading?,
-    only: GhostVaultWeb.static_paths(),
+    only: ["hologram" | GhostVaultWeb.static_paths()],
     raise_on_missing_only: code_reloading?
 
   # Code reloading can be explicitly enabled under the

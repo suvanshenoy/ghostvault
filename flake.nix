@@ -22,12 +22,12 @@
         ];
 
         shellHook = ''
-          export MIX_ARCHIVES="$HOME/prog/.mix/archives"
-          export MIX_HOME="$HOME/prog/.mix"
-          export HEX_HOME="$HOME/prog/.hex"
+          export MIX_ARCHIVES="$PWD/.mix/archives"
+          export MIX_HOME="$PWD/.mix"
+          export HEX_HOME="$PWD/.hex"
           mix local.hex --force
           mix archive.install --force hex phx_new
-          export BUN_INSTALL="$HOME/prog/ts/.bun"
+          export BUN_INSTALL="$PWD/.bun"
           export PATH="$PATH:$BUN_INSTALL/bin"
           $installBunPkgs
         '';

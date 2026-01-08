@@ -7,7 +7,12 @@ defmodule GhostVault.HomePage do
 
   def template do
     ~HOLO"""
-    <h1 class="text-2xl text-red-500">Hello from Hologram!</h1>
+    <div class="py-34 max-w-2xl mx-auto">
+      <div class="text-center">
+        <h1 class="text-4xl">Welcome back</h1>
+        <p class="mt-2">Your Secure Digital Vault.</p>
+      </div>
+    </div>
     """
   end
 end

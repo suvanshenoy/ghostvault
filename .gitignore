@@ -39,3 +39,8 @@ npm-debug.log
 *.db
 *.db-*
 
+/priv/static/hologram
+
+.bun
+.mix
+.hex

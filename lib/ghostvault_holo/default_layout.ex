@@ -1,6 +1,21 @@
 defmodule GhostVault.DefaultLayout do
   use Hologram.Component
 
+  alias GhostVault.Components.Navbar
+
+  @impl true
+  def init(_params, component, _server) do
+    navlinks = [
+      "Dashboard",
+      "Passwords",
+      "Emails",
+      "Files",
+      "Notes"
+    ]
+
+    put_state(component, :navlinks, navlinks)
+  end
+
   def template do
     ~HOLO"""
     <!DOCTYPE html>
@@ -11,7 +26,10 @@ defmodule GhostVault.DefaultLayout do
         <link rel="stylesheet" href="/assets/css/app.css"/>
       </head>
       <body>
-        <slot />
+        <Navbar navlinks={@navlinks}/>
+        <div>
+          <slot/>
+        </div>
       </body>
     </html>
     """

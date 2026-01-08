@@ -4,6 +4,7 @@ defmodule GhostVaultWeb.PageHTML do
 
   See the `page_html` directory for all templates available.
   """
+
   use GhostVaultWeb, :html
 
   embed_templates "page_html/*"
