@@ -1,0 +1,7 @@
+@import "tailwindcss" source(none);
+@source "../css";
+@source "../js";
+@source "../../lib/ghostvault_web";
+@source "../../lib/ghostvault_holo";
+
+@plugin "../vendor/heroicons";
