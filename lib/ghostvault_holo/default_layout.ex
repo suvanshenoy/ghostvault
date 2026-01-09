@@ -16,6 +16,7 @@ defmodule GhostVault.DefaultLayout do
     put_state(component, :navlinks, navlinks)
   end
 
+  @impl true
   def template do
     ~HOLO"""
     <!DOCTYPE html>
