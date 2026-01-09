@@ -1,12 +1,16 @@
-# https://taskfile.dev
-
-version: '3'
+version: "3"
 
 vars:
-  GREETING: Hello, World!
+  SHELL: zsh
 
 tasks:
-  default:
+  nix:setup:
     cmds:
-      - echo "{{.GREETING}}"
-    silent: true
+      - "nix develop --command {{.SHELL}"
+  mix:nix:dev:
+    cmds:
+      - "nix run github:nix-community/nixGL#nixGLIntel -- mix run --no-halt"
+
+  mix:dev:
+    cmds:
+      - mix run --no-halt
