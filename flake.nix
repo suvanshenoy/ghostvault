@@ -22,13 +22,22 @@
         ];
 
         shellHook = ''
-          export MIX_ARCHIVES="$PWD/.mix/archives"
-          export MIX_HOME="$PWD/.mix"
-          export HEX_HOME="$PWD/.hex"
+          export ROOT_DIR="$HOME/.nix-flakes/ex"
+
+          if [ ! -d "$ROOT_DIR" ];then
+            mkdir -pv "$ROOT_DIR"
+          fi
+
+          export MIX_ARCHIVES="$ROOT_DIR/.mix/archives"
+          export MIX_HOME="$ROOT_DIR/.mix"
+          export HEX_HOME="$ROOT_DIR/.hex"
+
           mix local.hex --force
           mix archive.install --force hex phx_new
-          export BUN_INSTALL="$PWD/.bun"
+
+          export BUN_INSTALL="$ROOT_DIR/.bun"
           export PATH="$PATH:$BUN_INSTALL/bin"
+
           $installBunPkgs
         '';
       };

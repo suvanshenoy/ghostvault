@@ -6,7 +6,7 @@ vars:
 tasks:
   nix:setup:
     cmds:
-      - "nix develop --command {{.SHELL}"
+      - "nix develop --command {{.SHELL}}"
   mix:nix:dev:
     cmds:
       - "nix run github:nix-community/nixGL#nixGLIntel -- mix run --no-halt"
