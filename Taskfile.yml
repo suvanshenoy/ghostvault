@@ -2,11 +2,13 @@ version: "3"
 
 vars:
   SHELL: zsh
+  FLAKE_URL: git+https://github.com/suvanshenoy/nix-flakes?dir=ex
 
 tasks:
   nix:setup:
     cmds:
-      - "nix develop --command {{.SHELL}}"
+      - "nix develop  --no-write-lock-file {{.FLAKE_URL}}  --command {{.SHELL}}"
+
   mix:nix:dev:
     cmds:
       - "nix run github:nix-community/nixGL#nixGLIntel -- mix run --no-halt"
