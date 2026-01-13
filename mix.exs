@@ -11,7 +11,25 @@ defmodule GhostVault.MixProject do
       aliases: aliases(),
       deps: deps(),
       compilers: [:hologram] ++ Mix.compilers(),
-      listeners: [Phoenix.CodeReloader]
+      listeners: [Phoenix.CodeReloader],
+      releases: releases()
+    ]
+  end
+
+  def releases do
+    [
+      ghostvault: [
+        applications: [runtime_tools: :permanent, ssl: :permanent],
+        steps: [:assemble, &Burrito.wrap/1],
+        burrito: [
+          targets: [
+            macos: [os: :darwin, cpu: :x86_64],
+            macos_silicon: [os: :darwin, cpu: :aarch64],
+            linux: [os: :linux, cpu: :x86_64],
+            windows: [os: :windows, cpu: :x86_64]
+          ]
+        ]
+      ]
     ]
   end
 
@@ -65,8 +83,8 @@ defmodule GhostVault.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.2.0"},
       {:bandit, "~> 1.5"},
-      {:desktop, github: "elixir-desktop/desktop"},
-      {:hologram, "~> 0.6"}
+      {:hologram, "~> 0.6"},
+      {:burrito, "~> 1.0"}
     ]
   end
 

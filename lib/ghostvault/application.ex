@@ -17,16 +17,8 @@ defmodule GhostVault.Application do
       # Start a worker by calling: GhostVault.Worker.start_link(arg)
       # {GhostVault.Worker, arg},
       # Start to serve requests, typically the last entry
-      GhostVaultWeb.Endpoint,
-       {
-        Desktop.Window,
-        [
-          app: :ghostvault,
-          id: GhostVaultWindow,
-          title: "GhostVault",
-          url: &GhostVaultWeb.Endpoint.url/0
-        ]
-      }
+
+      GhostVaultWeb.Endpoint
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

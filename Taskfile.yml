@@ -9,10 +9,13 @@ tasks:
     cmds:
       - "nix develop  --no-write-lock-file {{.FLAKE_URL}}  --command {{.SHELL}}"
 
-  mix:nix:dev:
+  dev:
     cmds:
-      - "nix run github:nix-community/nixGL#nixGLIntel -- mix run --no-halt"
+      - mix phx.server
 
-  mix:dev:
+  prod:
+    dotenv:
+      - ./.env
     cmds:
-      - mix run --no-halt
+      - mix release
+      - ./_build/prod/rel/ghostvault/bin/ghostvault start

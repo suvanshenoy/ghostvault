@@ -40,7 +40,11 @@ npm-debug.log
 *.db-*
 
 /priv/static/hologram
+/priv/cert
+
+burrito_out
 
 .bun
 .mix
 .hex
+.env

@@ -1,6 +1,5 @@
 defmodule GhostVaultWeb.Endpoint do
-  # use Phoenix.Endpoint, otp_app: :ghostvault
-  use Desktop.Endpoint, otp_app: :ghostvault
+  use Phoenix.Endpoint, otp_app: :ghostvault
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
@@ -49,8 +48,6 @@ defmodule GhostVaultWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
 
-
-  plug Desktop.Auth
   plug Hologram.Router
   plug GhostVaultWeb.Router
 end

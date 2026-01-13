@@ -25,7 +25,7 @@ defmodule GhostVault.Components.Navbar do
             <ul class="flex flex-row space-x-8 text-gray-200">
             {%for navlink <- @navlinks}
               <li>
-                <a href="#" class="py-2 px-3  hover:border-b-4 hover:border-blue-400">{navlink}</a>
+                <a href="#" class="py-4 px-2  hover:border-b-4 hover:border-blue-400">{navlink}</a>
               </li>
              {/for}
             </ul>
