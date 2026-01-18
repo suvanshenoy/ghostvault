@@ -5,9 +5,10 @@ vars:
   FLAKE_URL: git+https://github.com/suvanshenoy/nix-flakes?dir=ex
 
 tasks:
-  nix:setup:
+  setup:
     cmds:
-      - "nix develop  --no-write-lock-file {{.FLAKE_URL}}  --command {{.SHELL}}"
+      - "nix develop --no-write-lock-file {{.FLAKE_URL}} --command {{.SHELL}}"
+      - mix setup
 
   dev:
     cmds:
@@ -15,7 +16,7 @@ tasks:
 
   prod:
     dotenv:
-      - ./.env
+      - .env
     cmds:
       - mix release
       - ./_build/prod/rel/ghostvault/bin/ghostvault start

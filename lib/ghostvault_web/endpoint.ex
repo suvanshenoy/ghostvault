@@ -49,5 +49,4 @@ defmodule GhostVaultWeb.Endpoint do
   plug Plug.Session, @session_options
 
   plug Hologram.Router
-  plug GhostVaultWeb.Router
 end
